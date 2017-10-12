@@ -6,9 +6,8 @@ def get_cookie_report_text(driver):
 
 
 def test_cookies_cleared_in_firefox(firefox, cookie_checker_url):
-    clear_firefox_driver_session(firefox)
-
     firefox.get(cookie_checker_url)
+    clear_firefox_driver_session(firefox)
     assert get_cookie_report_text(firefox) == 'not seen'
     firefox.get(cookie_checker_url)
     assert get_cookie_report_text(firefox) == 'seen'
