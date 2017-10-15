@@ -5,7 +5,6 @@ import time
 import subprocess
 
 from selenium import webdriver
-
 import pytest
 
 here = os.path.abspath(os.path.dirname(__file__))
